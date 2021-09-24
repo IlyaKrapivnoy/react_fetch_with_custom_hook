@@ -13,13 +13,14 @@ const useFetch = (url) => {
             .then((response) => {
                 setData(response.data);
             })
-            .catch((err) => {
-                setError(err);
+            .catch((error) => {
+                setError(error);
             })
             .finally(() => {
                 setLoading(false);
             });
-    });
+    }, [url]);
+    return { data, loading, error };
 };
 
 export default useFetch;
