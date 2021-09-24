@@ -21,7 +21,7 @@ const useFetch = (url) => {
             });
     }, [url]);
 
-    const refecth = () => {
+    const refetch = () => {
         setLoading(true);
         axios
             .get(url)
@@ -36,7 +36,7 @@ const useFetch = (url) => {
             });
     };
 
-    return { data, loading, error, refecth };
+    return { data, loading, error, refetch };
 };
 
 export default useFetch;
