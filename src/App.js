@@ -2,7 +2,7 @@ import './App.css';
 import useFetch from './useFetch';
 
 function App() {
-    const { data, loading, error } = useFetch(
+    const { data, loading, error, refecth } = useFetch(
         'https://v2.jokeapi.dev/joke/Any'
     );
 
@@ -18,6 +18,7 @@ function App() {
             <h1>
                 {data?.setup} : {data?.delivery}
             </h1>
+            <button onClick={refecth}>Refresh</button>
         </div>
     );
 }

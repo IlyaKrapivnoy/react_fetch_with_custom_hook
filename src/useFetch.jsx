@@ -20,7 +20,23 @@ const useFetch = (url) => {
                 setLoading(false);
             });
     }, [url]);
-    return { data, loading, error };
+
+    const refecth = () => {
+        setLoading(true);
+        axios
+            .get(url)
+            .then((response) => {
+                setData(response.data);
+            })
+            .catch((error) => {
+                setError(error);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    };
+
+    return { data, loading, error, refecth };
 };
 
 export default useFetch;
